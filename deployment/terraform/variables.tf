@@ -2,7 +2,7 @@ variable "name" {
   default = "cloud"
 }
 variable " chart" {
-    default = "chart-cloud/Chart.yaml"
+    default = "chart-cloud"
   
 }
 variable "version" {
