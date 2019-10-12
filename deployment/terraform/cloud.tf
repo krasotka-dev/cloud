@@ -14,5 +14,5 @@ resource "helm_release" "cloud_release" {
  values = [
     "${file("chart-cloud/values.yaml")}"
   ]
-
+}
 }
