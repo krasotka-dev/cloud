@@ -13,7 +13,7 @@ resource "helm_release" "cloud_release" {
   version    = "${var.version}"
 
  values = [
-    "${file("chart-cloud/.cache/values.yaml")}"
+    "${file("./chart-cloud/.cache/values.yaml")}"
   ]
 }
 }
