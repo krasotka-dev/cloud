@@ -5,6 +5,7 @@ data "template_file" "cloud" {
     docker_image = "${var.docker_image}"
     docker_image_tag = "${var.docker_image_tag}"
   }
+  
 
 resource "helm_release" "cloud_release" {
   name       = "${var.name}"
