@@ -50,3 +50,4 @@ affinity: {}
 
 imagePullSecrets:
   - name: nexus-creds
+  
