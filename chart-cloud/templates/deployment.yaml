@@ -27,7 +27,7 @@ spec:
             - name: http
               containerPort: 7101
               protocol: TCP
-          #livenessProbe:
+          # livenessProbe:
            #httpGet:
               #path: /
               #port: http
