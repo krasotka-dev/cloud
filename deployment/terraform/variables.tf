@@ -1,7 +1,7 @@
 variable "name" {
   default = "cloud"
 }
-variable " chart" {
+variable "chart" {
     default = "chart-cloud"
   
 }
