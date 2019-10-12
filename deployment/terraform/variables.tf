@@ -17,4 +17,8 @@ variable "docker_image_tag" {
   default = "latest"
   
 }
+variable "domain_name" {
+  default = "test-cloud.fuchicorp.com"
+  
+}
 
