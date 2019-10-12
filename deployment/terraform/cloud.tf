@@ -16,4 +16,3 @@ resource "helm_release" "cloud_release" {
     "${file("./chart-cloud/.cache/values.yaml")}"
   ]
 }
-}
