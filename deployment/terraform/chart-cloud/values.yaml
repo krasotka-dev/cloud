@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nextcloud
-  tag: latest
+  repository: {docker_image}
+  tag: {docker_image_tag}
   pullPolicy: Always
 
 nameOverride: ""
@@ -24,11 +24,11 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - test-cloud.fuchicorp.com
+    - {domain_name}
   tls: 
     - secretName: letsencrypt-sec-cloud
       hosts:
-       - test-cloud.fuchicorp.com
+       - {domain_name}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
