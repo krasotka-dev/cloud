@@ -7,7 +7,7 @@ data "template_file" "cloud" {
   }
   
 resource "local_file" "chart_cloud_values_local_file" {
-  content  = "${trimspace(data.template_file.rendered)}"
+  content  = "${trimspace(data.template_file.chart_cloud_values.rendered)}"
   filename = "./chart-cloud/.cache/values.yaml"
 }
 resource "helm_release" "cloud_release" {
