@@ -14,6 +14,7 @@ resource "helm_release" "cloud_release" {
   name       = "${var.name}"
   chart      = "${var.chart}"
   version    = "${var.version}"
+  namespace = "${var.namespace}"
 
 values = [
     "${data.template_file.chart_cloud_values.rendered}"
