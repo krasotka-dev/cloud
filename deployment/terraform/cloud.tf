@@ -6,10 +6,6 @@ data "template_file" "cloud" {
     docker_image_tag = "${var.docker_image_tag}"
   }
   
-resource "local_file" "chart_cloud_values_local_file" {
-  content  = "${trimspace(data.template_file.chart_cloud_values.rendered)}"
-  filename = "./chart-cloud/.cache/values.yaml"
-}
 resource "helm_release" "cloud_release" {
   name       = "${var.name}"
   chart      = "${var.chart}"
@@ -17,7 +13,7 @@ resource "helm_release" "cloud_release" {
   namespace = "${var.namespace}"
 
 values = [
-    "${data.template_file.chart_cloud_values.rendered}"
+    "${file("./chart-cloud/.cache/values.yaml")}"
   ]
 }
 }
