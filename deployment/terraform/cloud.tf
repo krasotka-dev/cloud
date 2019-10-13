@@ -1,5 +1,5 @@
 data "template_file" "cloud" {
-  template = "${file("./chart-cloud/values.yaml")}"
+  template = "${file("./chart-cloud/.cache/values.yaml")}"
   vars = {
     domain_name = "${var.domain_name}"
     docker_image = "${var.docker_image}"
