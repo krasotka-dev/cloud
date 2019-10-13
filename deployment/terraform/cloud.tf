@@ -1,4 +1,4 @@
-data "template_file" "cloud" {
+data "template_file" "chart-cloud" {
   template = "${file("./chart-cloud/.cache/values.yaml")}"
   vars = {
     domain_name = "${var.domain_name}"
