@@ -1,10 +1,15 @@
-data "template_file" "chart-cloud" {
-  template = "${file("./chart-cloud/.cache/values.yaml")}"
+data "template_file" "chart_cloud" {
+  template = "${file("./chart-cloud/template_values.yaml")}"
   vars = {
     domain_name = "${var.domain_name}"
     docker_image = "${var.docker_image}"
     docker_image_tag = "${var.docker_image_tag}"
   }
+
+  resource "local_file" "chart_cloud_values_local_file" {
+  content  = "${trimspace(data.template_file.chart_cloud_values.rendered)}"
+  filename = "./chart-cloud/.cache/values.yaml"
+}
   
 resource "helm_release" "cloud_release" {
   name       = "${var.name}"
@@ -13,7 +18,7 @@ resource "helm_release" "cloud_release" {
   namespace = "${var.namespace}"
 
 values = [
-    "${file("./chart-cloud/.cache/values.yaml")}"
+    "{data.template_file.chart_cloud_values.rendered}"
   ]
 }
 }
