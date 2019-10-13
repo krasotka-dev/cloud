@@ -14,8 +14,8 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 80
-  targetPort: 7101
+  port: 7101
+  targetPort: 80
 ingress:
   enabled: true
   annotations: 
