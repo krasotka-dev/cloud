@@ -23,6 +23,7 @@ spec:
       imagePullSecrets:
 {{ toYaml .Values.imageSecret.allSecrets | indent 12 }}
 {{- end }}
+
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
