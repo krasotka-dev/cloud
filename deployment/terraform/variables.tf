@@ -1,8 +1,8 @@
 variable "name" {
-  default = "cloud"
+  default = "chart-cloud"
 }
 variable "chart" {
-    default = "chart-cloud"
+    default = "./chart-cloud"
   
 }
 variable "version" {
