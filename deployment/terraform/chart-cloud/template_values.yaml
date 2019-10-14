@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nextcloud
-  tag: latest
+  repository: ${docker_image}
+  tag: ${docker_image_tag}
   pullPolicy: Always
 
 nameOverride: ""
@@ -14,21 +14,20 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 7101
-  targetPort: 80
+  port: 80
 ingress:
   enabled: true
   annotations: 
       kubernetes.io/ingress.class: nginx
-      certmanager.k8s.io/cluster-issuer: letsencrypt-fuchicorp
+      certmanager.k8s.io/cluster-issuer: letsencrypt-fuchicorp-prod
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - test-cloud.fuchicorp.com
+    - test-cloud.${domain_name}
   tls: 
-    - secretName: letsencrypt-sec-cloud
+    - secretName: chart-cloud-prod
       hosts:
-       - test-cloud.fuchicorp.com
+       - test-cloud.${domain_name}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

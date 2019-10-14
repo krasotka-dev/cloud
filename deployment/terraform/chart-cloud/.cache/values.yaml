@@ -14,21 +14,20 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 7106
-  targetPort: 80
+  port: 80
 ingress:
   enabled: true
   annotations: 
       kubernetes.io/ingress.class: nginx
-      certmanager.k8s.io/cluster-issuer: letsencrypt-fuchicorp
+      certmanager.k8s.io/cluster-issuer: letsencrypt-fuchicorp-prod
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - test-fuchicorp.com
+    - test-cloud.fuchicorp.com
   tls: 
     - secretName: letsencrypt-sec-cloud
       hosts:
-       - test-fuchicorp.com
+       - test-cloud.fuchicorp.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
