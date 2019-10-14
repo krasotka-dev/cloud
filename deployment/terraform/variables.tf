@@ -21,4 +21,7 @@ variable "domain_name" {
   default = "test-cloud.fuchicorp.com"
   
 }
+variables "namespace" {
+  default = "test"
+}
 
