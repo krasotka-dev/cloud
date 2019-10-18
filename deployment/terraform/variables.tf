@@ -18,10 +18,10 @@ variable "docker_image_tag" {
   
 }
 variable "domain_name" {
-  default = "test-cloud.fuchicorp.com"
+  default = "dev.cloud.fuchicorp.com"
   
 }
 variable "namespace" {
-  default = "test"
+  default = "dev"
 }
 
