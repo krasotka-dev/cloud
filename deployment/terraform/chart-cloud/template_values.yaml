@@ -24,11 +24,11 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - test-cloud.fuchicorp.com
+    - ${deployment_endpoint}
   tls: 
     - secretName: letsencrypt-sec-cloud
       hosts:
-       - test-cloud.fuchicorp.com
+       - ${deployment_endpoint}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
