@@ -1,8 +1,26 @@
+variable "name" {
+  default = "chart-cloud"
+}
+variable "chart" {
+    default = "./chart-cloud"
+  
+}
+variable "version" {
+    default = "6.0.1"
+  
+}
+variable "deployment_image" {
+  default = "nextcloud"
+  
+}
+  
+
 variable "deployment_environment" {
-  default = "prod"
+  default = "dev"
 }
 
-variable "dns_endpoint_cloud" {
+
+variable "deployment_endpoint" {
   type = "map"
 
   default = {
@@ -10,12 +28,4 @@ variable "dns_endpoint_cloud" {
     qa   = "qa.cloud.fuchicorp.com"
     prod = "cloud.fuchicorp.com"
   }
-}
-
-variable "cloud_image" {
-  default = "nextcloud"
-}
-
-variable "lets_encrypt_email" {
-  default = "fuchicorpsolutions@gmail.com"
 }
