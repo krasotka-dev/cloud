@@ -1,9 +1,9 @@
 data "template_file" "chart_cloud_values" {
   template = "${file("./chart-cloud/template_values.yaml")}"
   vars = {
-    domain_name = "${var.domain_name}"
-    docker_image = "${var.docker_image}"
-    docker_image_tag = "${var.docker_image_tag}"
+    docker_image = "${var.deployment_image}"
+    deployment_endpoint = "${lookup(var.deployment_endpoint, "${var.deployment_environment}")}"
+
   }
 }
 
@@ -15,7 +15,7 @@ resource "helm_release" "chart_cloud" {
   name       = "${var.name}"
   chart      = "${var.chart}"
   version    = "${var.version}"
-  namespace = "${var.namespace}"
+  namespace = "${var.deployment_environment}"
 
  values = [
     "${data.template_file.chart_cloud_values.rendered}"
