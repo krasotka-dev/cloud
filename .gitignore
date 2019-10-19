@@ -1,3 +1,4 @@
 *json*
 *tfvars*
 *backend.tf*
+*.cache*
