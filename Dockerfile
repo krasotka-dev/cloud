@@ -3,6 +3,7 @@ FROM nextcloud
 MAINTAINER Fuchi Corp <fuchicorpsolution@gmail.com>
 ENV DOCKERVERSION=18.03.1-ce
 
+WORKDIR /cloud
 
 ## Download docker cli
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
