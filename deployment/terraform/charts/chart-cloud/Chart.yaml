@@ -3,7 +3,7 @@ appVersion: "apps/v1"
 description: A Helm chart for Kubernetes
 name: chart-cloud
 version: 0.1.0
-kubeVersion: v1.13.10-gke.0
+kubeVersion: ">=v1.14.10-gke.17"
 #keywords:
 #  - app
 #  - python
