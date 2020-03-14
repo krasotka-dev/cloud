@@ -3,6 +3,6 @@ module "nextcloud_deploy" {
   version = "0.0.3"
   deployment_name        = "nextcloud-deployment"
   deployment_environment = "dev"
-  deployment_endpoint    = "nextcloud.fuchicorp.com"
-  deployment_path        = "charts"
+  deployment_endpoint    = "dev.nextcloud.fuchicorp.com"
+  deployment_path        = "chart-cloud"
 }
