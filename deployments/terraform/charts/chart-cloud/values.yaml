@@ -28,6 +28,12 @@ ingress:
       hosts:
        - ${deployment_endpoint}
 
+env_vars:
+  mysql_user: ${mysql_user}
+  mysql_host: ${mysql_host}
+  mysql_database: ${mysql_database}
+  mysql_password:  ${mysql_password}
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
