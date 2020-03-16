@@ -1,13 +1,14 @@
-module "nextcloud_deploy" {
+module "mysql_deploy" {
  source  = "fuchicorp/chart/helm"
   version = "0.0.3"
-  deployment_name        = "nextcloud-deployment"
+  deployment_name        = "mysql-deployment"
   deployment_environment = "dev"
   deployment_endpoint    =  "${lookup(var.deployment_endpoint, "${var.deployment_environment}")}"
-  deployment_path        = "chart-cloud"
+  deployment_path        = "mysql"
 
     template_custom_vars = {
-    deployment_image = "${var.deployment_image}"
+    deployment_image = "mysql"
+    image_tag  =  "5.7.27"
   }
 
     env_vars = {
@@ -15,7 +16,7 @@ module "nextcloud_deploy" {
         mysql_host = "MYSQL_HOST"
         mysql_database = "MYSQL_DATABASE"
         mysql_password = "MYSQL_PASSWORD"
+
+
     }
-
-
 }

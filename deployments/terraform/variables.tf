@@ -1,8 +1,11 @@
-variable "deployment_image" {
-  default = "nextcloud"
+  variable "deployment_image" {
+    default = "nextcloud"
+}
+
+variable "image_tag" {
+  default = "5.7.27"
   
 }
-  
 
 variable "deployment_environment" {
   default = "dev"
@@ -18,3 +21,8 @@ variable "deployment_endpoint" {
     prod = "cloud.fuchicorp.com"
   }
 }
+
+variable "env_vars" {
+
+}
+
