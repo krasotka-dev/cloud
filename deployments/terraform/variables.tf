@@ -21,8 +21,3 @@ variable "deployment_endpoint" {
     prod = "cloud.fuchicorp.com"
   }
 }
-
-variable "env_vars" {
-
-}
-

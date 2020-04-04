@@ -29,10 +29,10 @@ ingress:
        - ${deployment_endpoint}
 
 env_vars:
-  mysql_user: ${mysql_user}
-  mysql_host: ${mysql_host}
-  mysql_database: ${mysql_database}
-  mysql_password:  ${mysql_password}
+  MYSQL_USER: ${mysql_user}
+  MYSQL_HOST: ${mysql_host}
+  MYSQL_DATABASE: ${mysql_database}
+  MYSQL_PASSWORD: ${mysql_password}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
