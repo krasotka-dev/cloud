@@ -13,7 +13,7 @@ module "mysql_deploy" {
 
     env_vars = {
         mysql_user     = "fuchicorp-user"
-        mysql_host     = "nextcloud-db.fuchicorp.com"
+        mysql_host     = "127.0.0.1"
         mysql_database = "nextcloud-db"
         mysql_password = "password"
 
